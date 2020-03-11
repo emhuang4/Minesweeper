@@ -24,14 +24,12 @@ void setup ()
 }
 public void setMines()
 {
-
-    if (mines.contains(buttons)==false){
-        int row= (int) Math.random()*NUM_ROWS;
-        int col=(int) Math.random()*NUM_COLS;
-        System.out.println(row+","+col);
+    int row= (int) Math.random()*NUM_ROWS;
+    int col=(int) Math.random()*NUM_COLS;
+      if (!mines.contains(buttons[row][col])){ 
         mines.add(buttons[row][col]);
-    }
-
+      }
+   System.out.println(row+","+col);
 }
 
 public void draw ()
@@ -107,7 +105,12 @@ public class MSButton
     public void mousePressed () 
     {
         clicked = true;
-        //your code here
+        if (mouseButton==RIGHT && flagged==true){
+         flagged=false;
+        }else if (mouseButton==RIGHT && flagged==false){
+         flagged=true;
+         clicked=false;
+        }
     }
     public void draw () 
     {    
