@@ -62,13 +62,20 @@ public void displayLosingMessage()
         }
       }
     }
-    text("YOU LOSE :(", CENTER, CENTER);
+    //fill(255,0,0);
+    //text("YOU LOSE :(", 200, 200);
+    buttons[NUM_ROWS/2][NUM_COLS/2 -1].setLabel("YOU");
+    buttons[NUM_ROWS/2][NUM_COLS/2].setLabel("LOSE");
+    buttons[NUM_ROWS/2][NUM_COLS/2 +1].setLabel(":(");
     
 }
 public void displayWinningMessage()
 {
-    // textAlign(CENTER,CENTER);
-    text("YOU WIN!! :D",CENTER,CENTER);
+    //fill(255,0,0);
+    //text("YOU WIN!! :D",200,200);
+    buttons[NUM_ROWS/2][NUM_COLS/2 -1].setLabel("YOU");
+    buttons[NUM_ROWS/2][NUM_COLS/2].setLabel("WIN!!");
+    buttons[NUM_ROWS/2][NUM_COLS/2 +1].setLabel(":D");
 }
 
 public boolean isValid(int r, int c)
